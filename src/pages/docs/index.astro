@@ -1,0 +1,73 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Text from "@/astro/Text/index.astro";
+---
+
+<Layout title="Upgradableweb - Documentaions">
+    <nav
+        class="px fixed top-0 z-[100] df aic bg-white/95 border-b backdrop-blur w-full"
+    >
+        <h2 class="py md:py-1 md:text-4xl">
+            <a href="/">
+                <Text>Upgradableweb</Text>
+            </a>
+        </h2>
+        <div class="df f-1 jce aic h-full">
+            <a
+                href="/contact"
+                class="bg-blue-600 my hover:bg-black shadow-lg text-white rounded-full px-6 py-2 ml"
+            >
+                Contact
+            </a>
+        </div>
+    </nav>
+
+    <div class="bg-yellow-50 min-h-screen py-32">
+        <p class="tac">For Developers</p>
+        <h1 class="tac text-4xl">
+            Upgradableweb will Open Source to Public Soon
+        </h1>
+        <div class="df jcc mt-32">
+            <form id="submit" class="df w-full max-w-xl relative px">
+                <input
+                    required
+                    placeholder="Your Email"
+                    class="rounded-full pl bold pr-24"
+                />
+                <button
+                    class="bg-blue-600 border absolute hover:bg-black right-4 px-8 text-white h-full rounded-full"
+                >
+                    Notify
+                </button>
+            </form>
+        </div>
+        <section class="md:px-20 px mt-20">
+            <h1 class="tac">
+                Explore Our Other Packages That Makes Your Coding Easy
+            </h1>
+            <div class="grid md:grid-cols-2 gap-8 mt-20">
+                <div class="p bg rounded-xl hover:shadow">
+                    <h1>1. Server Function</h1>
+                    <p>@upgradableweb/server-fn</p>
+                    <p>
+                        Make Function in Server Using Backend Frameworks & Call
+                        it In Client Side with or without encryption
+                    </p>
+                </div>
+                <div class="p bg rounded-xl hover:shadow">
+                    <h1>2. client</h1>
+                    <p>@upgradableweb/client</p>
+                    <p>fetch in much easy & less coding</p>
+                </div>
+                <div class="p bg rounded-xl hover:shadow">
+                    <h1>3. DB Tech</h1>
+                    <p>@upgradableweb/db-tech</p>
+                    <p>
+                        Build Frequency & Parameters Based AI Models For
+                        Business. using any Programming launguage
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+</Layout>

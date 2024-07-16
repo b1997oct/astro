@@ -1,0 +1,9 @@
+---
+interface Props extends astroHTML.JSX.HTMLAttributes {}
+
+let { props } = Astro;
+props.class +=" text-blue-600";
+
+---
+
+<span {...props}><slot /></span>

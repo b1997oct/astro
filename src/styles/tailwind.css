@@ -1,0 +1,226 @@
+@tailwind utilities;
+
+input,
+select,
+textarea {
+  border-style: solid;
+  @apply px-2 text-base py-1.5 w-full focus:border-[rgb(var(--pc))] border border-stone-300 rounded-[--radius]
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply m-0
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.a:visited {
+  @apply visited:text-blue-400 text-blue-600
+}
+
+.outlined {
+  @apply border duration-200 active:opacity-50 hover:bg-stone-100
+}
+
+select {
+  background: transparent;
+}
+
+
+
+@layer utilities {
+
+
+  .bg {
+    background: rgb(var(--bg))
+  }
+
+  .bg-pc {
+    background: rgb(var(--pc))
+  }
+
+  .bg-pc-1 {
+    background: rgba(var(--pc), 0.1);
+  }
+
+
+  .border-pc {
+    border-color: rgb(var(--pc))
+  }
+
+  /* margin padding */
+
+  .m {
+    @apply m-4
+  }
+
+  .mt {
+    @apply mt-4
+  }
+
+  .mb {
+    @apply mb-4
+  }
+
+  .my {
+    @apply my-4
+  }
+
+  .mr {
+    @apply mr-4
+  }
+
+  .ml {
+    @apply ml-4
+  }
+
+  .mx {
+    @apply mx-4
+  }
+
+
+  .p {
+    @apply p-4
+  }
+
+  .pt {
+    @apply pt-4
+  }
+
+  .pb {
+    @apply pb-4
+  }
+
+  .py {
+    @apply py-4
+  }
+
+
+  .pr {
+    @apply pr-4
+  }
+
+  .pl {
+    @apply pl-4
+  }
+
+  .px {
+    @apply px-4
+  }
+
+  .t-p {
+    @apply p md:px-10
+  }
+
+
+  /* flex */
+
+  .df {
+    @apply flex
+  }
+
+  .dn {
+    @apply hidden
+  }
+
+  .fww {
+    @apply flex-wrap
+  }
+
+  .f-1 {
+    @apply flex-1
+  }
+
+  .gap {
+    @apply gap-4
+  }
+
+  .fdc {
+    @apply flex-col
+  }
+
+  .fdr {
+    @apply flex-row
+  }
+
+  .fdrr {
+    @apply flex-row-reverse
+  }
+
+  .aic {
+    @apply items-center
+  }
+
+  .ais {
+    @apply items-start
+  }
+
+  .aie {
+    @apply items-end
+  }
+
+  .jcc {
+    @apply justify-center
+  }
+
+  .jce {
+    @apply justify-end
+  }
+
+  .jcsb {
+    @apply justify-between
+  }
+
+  .jcsa {
+    @apply justify-around
+  }
+
+  .jcse {
+    @apply justify-evenly
+  }
+
+  /* typoraphy */
+
+
+  .undeline {
+    text-decoration: underline;
+  }
+
+  .tas {
+    text-align: start;
+  }
+
+  .tac {
+    @apply text-center
+  }
+
+  .tae {
+    @apply text-end
+  }
+
+  .bold {
+    @apply font-semibold
+  }
+
+  .nowrap {
+    @apply whitespace-nowrap overflow-hidden
+  }
+
+  /* position */
+
+  .top {
+    @apply top-0
+  }
+
+  .bottom {
+    @apply bottom-0
+  }
+
+  .right {
+    @apply right-0
+  }
+
+
+}

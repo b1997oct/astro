@@ -1,21 +1,327 @@
 ---
-import Card from '../components/Card.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "@/layouts/Layout.astro";
+import Text from "@/astro/Text/index.astro";
+import FlashContactUs from "@/components/FlashContactUs/index.astro";
 
+let frontend = [
+	{
+		name: "HTML",
+		src: "html.webp",
+	},
+	{
+		name: "JS",
+		src: "js.webp",
+	},
+	{
+		name: "CSS",
+		src: "css.webp",
+	},
+	{
+		name: "REACT",
+		src: "react.webp",
+	},
+	{
+		name: "Next",
+		src: "nextjs.png",
+	},
+	{
+		name: "preact",
+		src: "preact.png",
+	},
+	{
+		name: "ANGULAR",
+		src: "angular.svg",
+	},
+	{
+		name: "MUI",
+		src: "mui.webp",
+	},
+	{
+		name: "VUE",
+		src: "vue.svg",
+	},
+	{
+		name: "nuxt",
+		src: "nuxtjs.png",
+	},
+	{
+		name: "qwik",
+		src: "qwik.png",
+	},
+	{
+		name: "svelte",
+		src: "svelte.svg",
+	},
+	{
+		name: "astro",
+		src: "astro.svg",
+	},
 
-let res = await fetch('https://astro-bice-five.vercel.app/server')
-let data = await res.json()
+	{
+		name: "tailwind",
+		src: "tailwindcss.png",
+	},
+];
 
-console.log('data: ', data);
+let backend = [
+	{
+		name: "NODE",
+		src: "node.webp",
+	},
+	{
+		name: "dotnet",
+		src: "dotnet.png",
+	},
+	{
+		name: "express",
+		src: "express-js.png",
+	},
+	{
+		name: "fastify",
+		src: "fastify.png",
+	},
+	{
+		name: "deno",
+		src: "deno.png",
+	},
+];
 
+let ai = [
+	{
+		name: "tensorflow",
+		src: "tensorflow.webp",
+	},
+	{
+		name: "pytorch",
+		src: "pytorch.png",
+	},
+	{
+		name: "keras",
+		src: "keras.png",
+	},
+	{
+		name: "Scikit",
+		src: "scikit-learn.jpg",
+	},
+];
+
+let data = [
+	{
+		name: "Frontend",
+		sets: frontend,
+	},
+	{
+		name: "Backend",
+		sets: backend,
+	},
+	{
+		name: "AI",
+		sets: ai,
+	},
+];
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Upgradableweb - Project That Keep Up To Date Forever">
+	<nav
+		class="px fixed top-0 z-[100] md:df aic bg-white/95 border-b backdrop-blur w-full"
+	>
+		<div class="f-1 df">
+			<h2 class="text-blue-500 py w-full md:py-3 md:text-4xl">
+				<Text>Upgradableweb</Text>
+			</h2>
+			<button id="menu-toggle" class="md:hidden">Menu</button>
+		</div>
+
+		<ul id="menu" class="hidden list-none pl-0 gap-8 md:gap-0 fdc md:fdr md:df jce md:aic">
+			<li>
+				<a href="/docs" class="px a py md:py-6 hover:bg-blue-50">
+					Docs
+				</a>
+			</li>
+			<li>
+				<a href="/" class="py md:py-6 px a hover:bg-blue-50"
+					>Get Started</a
+				>
+			</li>
+			<li>
+				<a
+					href="/contact"
+					class="bg-blue-600 hover:bg-black shadow-lg text-white rounded-full px-6 py-2 ml-2"
+				>
+					<span class="text-white">Contact</span>
+				</a>
+			</li>
+		</ul>
+	</nav>
 	<main>
-		{JSON.stringify(data)}
-		{data.date}
-		ok this is my hrml
-		<button>Click Me</button>
+		<header class="bg-yellow-50 h-screen">
+			<div class="pt-[25vh]">
+				<h1 class="md:text-7xl text-center">
+					A <Text>Project</Text> That Will Up To Date Forever &
+				</h1>
+				<h1 class="text-center md:text-7xl">
+					Utilize Any Technology also <Text>Shift</Text> to Any Technology
+				</h1>
+			</div>
+			<div class="flex justify-center mt-20">
+				<button
+					name="contact-modal"
+					class="rounded-full hover:bg-black border-none shadow-md bg-blue-600 text-white px-10 py-2 text-xl"
+				>
+					Get Started
+				</button>
+			</div>
+		</header>
+		<section class="text-white df fdc bg-stone-900 h-screen">
+			<p class="tac px-10 py-10">
+				Upgradableweb Use All Technology as Seperate Components
+			</p>
+			<div class="df fww jcsa mt-10">
+				<div class="border-l-2 pb-32">
+					<h1 class="text-5xl px border-b border-r">AI</h1>
+				</div>
+				<div class="border-r-2 pb-32">
+					<h1 class="text-5xl px border-b border-l">Backend</h1>
+				</div>
+			</div>
+			<div class="df jcc glow bg-blue-600">
+				<div
+					class="bg-blue-600 shine px-10 border-blue-600 border-2 py rounded-br-3xl rounded-tl-3xl"
+				>
+					<h1>Upgradableweb</h1>
+				</div>
+			</div>
+			<div class="df jcc">
+				<div class="border-l-2 pt-32">
+					<h1 class="text-5xl border-b border-r px">Frontend</h1>
+				</div>
+			</div>
+		</section>
+		<section class="text-white bg-stone-900">
+			<div class="py-10 tac">Supportive Frameworks</div>
+			<div class="px md:px-20">
+				{
+					data.map((d) => {
+						let { name, sets } = d;
+						return (
+							<div class="jcc py-10 df fdc md:fdr aic">
+								<h1 class="bg-blue-600 px-10 border-blue-600 border-2 py rounded-br-3xl rounded-tl-3xl">
+									{name}
+								</h1>
+								<div class="md:w-full border h-40 md:h-auto max-w-80" />
+								<div class="df fww text-black gap border jcse p">
+									{sets.map((d) => {
+										let { name, src } = d;
+										return (
+											<div class="bg-yellow-50 w-20 df aic fdc jcc tac rounded-full aspect-square p-2">
+												<img
+													src={src}
+													class="w-12 overflow-hidden"
+													alt={name + " image"}
+												/>
+												<div class="capitalize">
+													{name}
+												</div>
+											</div>
+										);
+									})}
+								</div>
+							</div>
+						);
+					})
+				}
+			</div>
+			<h1 class="tac pb-20">
+				{`Don't`} know Most of Technology - We Got Your Back
+			</h1>
+		</section>
+		<section class="px-8 bg-yellow-50 py-20">
+			<h1>Why Need Upgradableweb</h1>
+			<ol class="df fdc gap">
+				<li>
+					There are many Frameworks out there And Many more To Come
+					The Manual Updating may not Cost effective or even Chaging
+					to Other Similar launguage is time consuming
+				</li>
+				<li>
+					Updating and Maintain is automatic then You can concentrate
+					only On building More Components
+				</li>
+				<li>
+					Emerging New Technologies. Tech is changing rapidly So put
+					your machine handle it (Adot new Technologies easily)
+				</li>
+				<li>
+					Switch from Templates to Components (Minimum peace of Code)
+				</li>
+				<li>Why Depend on One Framework?</li>
+			</ol>
+		</section>
+		<section class="bg-stone-800 pb-60 pt-20 text-white">
+			<h1 class="tac text-5xl">
+				Build <Text>Sites</Text> As Per <img
+					src="google.svg"
+					alt="google business"
+					class="w-40"
+				/> Standards
+			</h1>
+			<div class="glow-yellow bg-yellow-50 aic df jcc mt-40">
+				<button
+					name="contact-modal"
+					class="bg-blue-600 text-2xl bold text-white hover:bg-transparent hover:text-blue-600 px-10 border-blue-600 border-2 py rounded-br-3xl rounded-tl-3xl"
+				>
+					Contact Us
+				</button>
+			</div>
+		</section>
+		<div
+			id="contact-modal"
+			class="fixed bg-black/50 hidden pt-[10vh] ais jcc backdrop-blur-sm z-[101] top-0 w-full h-full"
+		>
+			<FlashContactUs />
+		</div>
 	</main>
 </Layout>
 
+<style>
+	.glow {
+		box-shadow: 0px 0px 317px 32px rgb(37 99 235);
+	}
+	.glow-yellow {
+		box-shadow: 0px 0px 317px 20px rgb(254 252 232);
+	}
+</style>
+
+<script>
+	import findById from "@/js/findById";
+
+	let ls = ["hidden", "df"],
+		menuBtn = findById("menu-toggle"),
+		menu = findById("menu"),
+		modal = findById("contact-modal");
+
+	const menuToggle = () => {
+		ls.forEach((d) => {
+			menu.classList.toggle(d);
+		});
+	};
+
+	menuBtn.onclick = (e) => {
+		e.preventDefault();
+		menuToggle();
+		menuBtn.innerText = menu.classList.contains("hidden")
+			? "Menu"
+			: "Close";
+	};
+
+	const modalToggle = () => {
+		ls.forEach((d) => {
+			modal.classList.toggle(d);
+		});
+	};
+	modal.onclick = modalToggle;
+
+	document.getElementsByName("contact-modal").forEach((d) => {
+		d.onclick = modalToggle;
+	});
+</script>

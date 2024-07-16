@@ -1,0 +1,36 @@
+---
+import Text from "@/astro/Text/index.astro";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout title="Tweet your Post">
+    <div class="df jcc py-20">
+        <div class="p m shadow w-full">
+            <h1><Text>Tweet Your Post</Text></h1>
+            <br />
+            <textarea id="post" class="w-full"></textarea>
+            <div><Text id="count">{0}</Text>/500</div>
+            <div class="df jce mt">
+                <button id="submit" class="border-2 rounded-full">Post</button>
+            </div>
+        </div>
+    </div>
+</Layout>
+
+<script>
+    import { findById } from "@/js/hooks";
+
+    let count = findById("count"),
+        post = findById("post"),
+        btn = findById("submit");
+
+    let data = "";
+
+    post.oninput = (e) => {
+        const target = e.target as HTMLInputElement;
+        data = target.value;
+        count.textContent = data.length.toString();
+    };
+
+    btn.onclick = () => console.log(data);
+</script>
