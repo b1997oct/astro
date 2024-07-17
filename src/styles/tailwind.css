@@ -16,7 +16,7 @@ a {
   color: inherit;
 }
 
-.a:visited {
+.a {
   @apply visited:text-blue-400 text-blue-600
 }
 

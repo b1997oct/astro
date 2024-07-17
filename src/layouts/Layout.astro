@@ -4,6 +4,7 @@ import "../styles/tailwind.css";
 import "../styles/animation.css";
 import "../styles/globals.css";
 import Footer from "./Footer.astro";
+import Text from "@/astro/Text/index.astro";
 
 interface Props {
 	title: string;
@@ -25,7 +26,52 @@ const { title, description, nofooter } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
+		<nav
+			class="md:px px-2 overflow-hidden fixed top-0 z-[100] df aic bg-white border-b backdrop-blur w-full"
+		>
+			<h2
+				class="select-none f-1 w-full py md:text-4xl"
+			>
+				<a href="/"><Text>Upgradableweb</Text></a>
+			</h2>
+			<ul class="list-none fdc md:fdr md:df jce md:aic">
+				<li class="hidden md:list-item">
+					<a href="/docs" class="px a py md:py-7 hover:bg-blue-50"
+						>Docs</a
+					>
+				</li>
+				<li class="hidden md:list-item">
+					<a
+						href="/component"
+						class="py md:py-7 px a hover:bg-blue-50">Component</a
+					>
+				</li>
+				<li class="hidden md:list-item">
+					<a
+						href="/#frameworks"
+						class="py md:py-7 px a hover:bg-blue-50">Frameworks</a
+					>
+				</li>
+				<li>
+					<a
+						href="/contact"
+						class="bg-blue-600 hover:bg-black shadow-lg text-white rounded-full px-6 py-2 ml"
+					>
+						Contact
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<div id="nav"></div>
 		<slot />
+		<div id="modal"></div>
 		{!nofooter && <Footer />}
 	</body>
 </html>
+
+<script>
+	import findById from "@/js/findById";
+	let nav = findById("nav");
+	let height = window.getComputedStyle(document.querySelector("nav")).height;
+	nav.style.paddingTop = height;
+</script>

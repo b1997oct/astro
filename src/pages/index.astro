@@ -1,7 +1,8 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Text from "@/astro/Text/index.astro";
-import FlashContactUs from "@/components/FlashContactUs/index.astro";
+import ContactModal from "@/preact/ContactModal/index.jsx";
+import Menu from "@/preact/Menu/index.jsx";
 
 let frontend = [
 	{
@@ -122,39 +123,9 @@ let data = [
 ---
 
 <Layout title="Upgradableweb - Project That Keep Up To Date Forever">
-	<nav
-		class="px fixed top-0 z-[100] md:df aic bg-white/95 border-b backdrop-blur w-full"
-	>
-		<div class="f-1 df">
-			<h2 class="text-blue-500 py w-full md:py-3 md:text-4xl">
-				<Text>Upgradableweb</Text>
-			</h2>
-			<button id="menu-toggle" class="md:hidden">Menu</button>
-		</div>
-
-		<ul id="menu" class="hidden list-none pl-0 gap-8 md:gap-0 fdc md:fdr md:df jce md:aic">
-			<li>
-				<a href="/docs" class="px a py md:py-6 hover:bg-blue-50">
-					Docs
-				</a>
-			</li>
-			<li>
-				<a href="/" class="py md:py-6 px a hover:bg-blue-50"
-					>Get Started</a
-				>
-			</li>
-			<li>
-				<a
-					href="/contact"
-					class="bg-blue-600 hover:bg-black shadow-lg text-white rounded-full px-6 py-2 ml-2"
-				>
-					<span class="text-white">Contact</span>
-				</a>
-			</li>
-		</ul>
-	</nav>
+	
 	<main>
-		<header class="bg-yellow-50 h-screen">
+		<header class="bg-yellow-50 min-h-screen">
 			<div class="pt-[25vh]">
 				<h1 class="md:text-7xl text-center">
 					A <Text>Project</Text> That Will Up To Date Forever &
@@ -197,9 +168,9 @@ let data = [
 				</div>
 			</div>
 		</section>
-		<section class="text-white bg-stone-900">
+		<section id="frameworks" class="text-white bg-stone-900">
 			<div class="py-10 tac">Supportive Frameworks</div>
-			<div class="px md:px-20">
+			<div  class="px md:px-20">
 				{
 					data.map((d) => {
 						let { name, sets } = d;
@@ -252,12 +223,12 @@ let data = [
 					your machine handle it (Adot new Technologies easily)
 				</li>
 				<li>
-					Switch from Templates to Components (Minimum peace of Code)
+					Switch from Templates to Components (Minimum Piece of Code)
 				</li>
 				<li>Why Depend on One Framework?</li>
 			</ol>
 		</section>
-		<section class="bg-stone-800 pb-60 pt-20 text-white">
+		<section class="bg-stone-800 pb-56 pt-20 text-white">
 			<h1 class="tac text-5xl">
 				Build <Text>Sites</Text> As Per <img
 					src="google.svg"
@@ -274,12 +245,7 @@ let data = [
 				</button>
 			</div>
 		</section>
-		<div
-			id="contact-modal"
-			class="fixed bg-black/50 hidden pt-[10vh] ais jcc backdrop-blur-sm z-[101] top-0 w-full h-full"
-		>
-			<FlashContactUs />
-		</div>
+		<ContactModal client:load />
 	</main>
 </Layout>
 
@@ -291,37 +257,3 @@ let data = [
 		box-shadow: 0px 0px 317px 20px rgb(254 252 232);
 	}
 </style>
-
-<script>
-	import findById from "@/js/findById";
-
-	let ls = ["hidden", "df"],
-		menuBtn = findById("menu-toggle"),
-		menu = findById("menu"),
-		modal = findById("contact-modal");
-
-	const menuToggle = () => {
-		ls.forEach((d) => {
-			menu.classList.toggle(d);
-		});
-	};
-
-	menuBtn.onclick = (e) => {
-		e.preventDefault();
-		menuToggle();
-		menuBtn.innerText = menu.classList.contains("hidden")
-			? "Menu"
-			: "Close";
-	};
-
-	const modalToggle = () => {
-		ls.forEach((d) => {
-			modal.classList.toggle(d);
-		});
-	};
-	modal.onclick = modalToggle;
-
-	document.getElementsByName("contact-modal").forEach((d) => {
-		d.onclick = modalToggle;
-	});
-</script>

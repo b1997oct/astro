@@ -36,12 +36,8 @@ export default function Socials() {
             {
                 socials.map((d) => {
                     let { hover, href, icon } = d;
-                    hover += " transition-all";
-                    return (
-                        <a target="_blank" class={hover} href={href}>
-                            {icon}
-                        </a>
-                    );
+                    hover += " visited:opacity-60 transition-all";
+                    return <a target="_blank" class={hover} href={href}>{icon}</a>
                 })
             }
         </div>
